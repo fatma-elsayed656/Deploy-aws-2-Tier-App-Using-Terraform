@@ -7,4 +7,3 @@
 modules/key/ssh_key
 modules/key/ssh_key.pub
 *.tfstate
-/screenshot
