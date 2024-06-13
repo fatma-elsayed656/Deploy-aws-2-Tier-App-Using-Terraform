@@ -4,7 +4,7 @@ This Repo Uses Infrastructure as a code through Terraform to deploy 2-tier Web a
 
 ## 🏠 Architecture
 
-![architecture](https://github.com/fatma-elsayed656/Deploy-aws-2-Tier-App-Using-Terraform/assets/135543396/569ab1ef-49b2-4e29-bb86-63135a343c4a)
+![architecture](https://github.com/fatma-elsayed656/Deploy-aws-2-Tier-App-Using-Terraform/assets/135543396/58da1b9d-84c7-4251-a411-ba37b6e2976b)
 
 ## 🖥️ Local Setup
 
@@ -36,20 +36,20 @@ Create an S3 bucket to store the .tfstate file in the remote backend
 > [!NOTE]
 > It is highly recommended that you enable `Bucket Versioning` on the S3 bucket to allow for state recovery in the case of accidental deletions and human error. 
 
-![s3bucket](https://github.com/fatma-elsayed656/Deploy-aws-2-Tier-App-Using-Terraform/assets/135543396/ba57bb9b-d668-4a37-800f-1c11f975a755)
+![s3bucket](https://github.com/fatma-elsayed656/Deploy-aws-2-Tier-App-Using-Terraform/assets/135543396/f4550328-f0c0-442f-8eaf-c56cbcfa7563)
 
 ### 🔐 Create a Dynamo DB table for state file locking
 
 - Create a Dynamo DB for state-locking so that you can keep tfstate file consistent while working on a collaborative project
 - Make sure to add a `Partition key` with the name `LockID` and type as `String `
 
-![ynamodblock](https://github.com/fatma-elsayed656/Deploy-aws-2-Tier-App-Using-Terraform/assets/135543396/8ccf8740-df83-40f3-9e2f-e047972031a2)
+![dynamodblock](https://github.com/fatma-elsayed656/Deploy-aws-2-Tier-App-Using-Terraform/assets/135543396/be7239a6-5ef9-4a95-a3d3-6bd4940e93f3)
 
 ### 🌐 Route 53 Hosted Zone
 
 Create a public hosted zone from AWS Console --> Route53 --> Hosted Zones 
 
-![route53-hostedzone](https://github.com/fatma-elsayed656/Deploy-aws-2-Tier-App-Using-Terraform/assets/135543396/006eca56-fb09-4bf8-886c-a33cb29873da)
+![route53-hostedzone](https://github.com/fatma-elsayed656/Deploy-aws-2-Tier-App-Using-Terraform/assets/135543396/6e697243-e06c-47c7-9dc9-ee1695178c8f)
 
 ## ✈️ Deploy our application on the cloud 
 
@@ -76,19 +76,19 @@ terraform apply --auto-approve
 
 - Record in route 53
   
-  ![route53record](https://github.com/fatma-elsayed656/Deploy-aws-2-Tier-App-Using-Terraform/assets/135543396/70856968-3d92-4782-b51c-58f4bbf37da3)
+  ![route53record](https://github.com/fatma-elsayed656/Deploy-aws-2-Tier-App-Using-Terraform/assets/135543396/129d66b6-412b-4c6a-a283-764438740758)
 
 - Application load balancer
   
-  ![alb](https://github.com/fatma-elsayed656/Deploy-aws-2-Tier-App-Using-Terraform/assets/135543396/07e3f0c8-4a8d-4467-a21f-301be5a46a0d)
+  ![alb](https://github.com/fatma-elsayed656/Deploy-aws-2-Tier-App-Using-Terraform/assets/135543396/bf74f8f8-9dc5-48db-9a44-4e88cd617534)
 
 - RDS instance
   
-  ![rds](https://github.com/fatma-elsayed656/Deploy-aws-2-Tier-App-Using-Terraform/assets/135543396/fbb86efa-732e-47d4-a4fc-6bbaa13fc701)
+  ![rds](https://github.com/fatma-elsayed656/Deploy-aws-2-Tier-App-Using-Terraform/assets/135543396/7a1d4ce2-cf69-41cd-b438-6a5264ea454e)
 
 - The Website 
   
-  ![website](https://github.com/fatma-elsayed656/Deploy-aws-2-Tier-App-Using-Terraform/assets/135543396/321ee8a4-8a0e-4c30-b039-fbd4acb62815)
+  ![website](https://github.com/fatma-elsayed656/Deploy-aws-2-Tier-App-Using-Terraform/assets/135543396/a2107efa-433a-49c4-b4b8-d75a85dbafa1)
 
 ## 🗑️ Clean up
 
