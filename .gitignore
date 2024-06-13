@@ -1,0 +1,10 @@
+.vscode
+*.tfvars.*
+*.tfvars
+*.lock.*
+*.hcl
+.terraform
+modules/key/ssh_key
+modules/key/ssh_key.pub
+*.tfstate
+/screenshot
